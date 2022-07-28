@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Koa | Ipare 文档</title><meta name="description" content="面向云的现代渐进式轻量 Node.js 框架">
+    <link rel="modulepreload" href="/assets/app.a704fd29.js"><link rel="modulepreload" href="/assets/koa.html.9f8e6974.js"><link rel="modulepreload" href="/assets/koa.html.ddde0174.js"><link rel="prefetch" href="/assets/index.html.1b288058.js"><link rel="prefetch" href="/assets/intro.html.4c2f2f95.js"><link rel="prefetch" href="/assets/jwt.html.db29e0e1.js"><link rel="prefetch" href="/assets/static.html.1e859f7c.js"><link rel="prefetch" href="/assets/swagger.html.cb9c2258.js"><link rel="prefetch" href="/assets/validator.html.4ee68295.js"><link rel="prefetch" href="/assets/alifc.html.6570d93e.js"><link rel="prefetch" href="/assets/appoint.html.3f23d8fc.js"><link rel="prefetch" href="/assets/cli.html.67700c52.js"><link rel="prefetch" href="/assets/debug.html.8253f386.js"><link rel="prefetch" href="/assets/env.html.e12b2a73.js"><link rel="prefetch" href="/assets/filter.html.00a41268.js"><link rel="prefetch" href="/assets/http.html.27ca875f.js"><link rel="prefetch" href="/assets/inject.html.ff0c82bd.js"><link rel="prefetch" href="/assets/intro.html.840bb9e4.js"><link rel="prefetch" href="/assets/koa-env.html.32a88ced.js"><link rel="prefetch" href="/assets/lambda.html.af889087.js"><link rel="prefetch" href="/assets/middleware.html.2c11e444.js"><link rel="prefetch" href="/assets/mva.html.715f2f67.js"><link rel="prefetch" href="/assets/pipe.html.47a60c00.js"><link rel="prefetch" href="/assets/quickstart.html.99ff6eae.js"><link rel="prefetch" href="/assets/result.html.8b45bd33.js"><link rel="prefetch" href="/assets/router.html.1c22e02d.js"><link rel="prefetch" href="/assets/startup.html.7d6e636a.js"><link rel="prefetch" href="/assets/view.html.431cdc67.js"><link rel="prefetch" href="/assets/404.html.265028f6.js"><link rel="prefetch" href="/assets/index.html.d6d237f3.js"><link rel="prefetch" href="/assets/intro.html.42de9540.js"><link rel="prefetch" href="/assets/jwt.html.61cce645.js"><link rel="prefetch" href="/assets/static.html.62b1259e.js"><link rel="prefetch" href="/assets/swagger.html.f5a705ed.js"><link rel="prefetch" href="/assets/validator.html.2ece5652.js"><link rel="prefetch" href="/assets/alifc.html.0bf62860.js"><link rel="prefetch" href="/assets/appoint.html.e6971070.js"><link rel="prefetch" href="/assets/cli.html.f386a120.js"><link rel="prefetch" href="/assets/debug.html.32f05ffe.js"><link rel="prefetch" href="/assets/env.html.3ccd3c4f.js"><link rel="prefetch" href="/assets/filter.html.67836072.js"><link rel="prefetch" href="/assets/http.html.7850b74f.js"><link rel="prefetch" href="/assets/inject.html.5d786fea.js"><link rel="prefetch" href="/assets/intro.html.79f54a63.js"><link rel="prefetch" href="/assets/koa-env.html.e5e93f00.js"><link rel="prefetch" href="/assets/lambda.html.a77476dd.js"><link rel="prefetch" href="/assets/middleware.html.5b9133dd.js"><link rel="prefetch" href="/assets/mva.html.3df68e40.js"><link rel="prefetch" href="/assets/pipe.html.17ad99c4.js"><link rel="prefetch" href="/assets/quickstart.html.32bfdc5a.js"><link rel="prefetch" href="/assets/result.html.b9c8442a.js"><link rel="prefetch" href="/assets/router.html.70ea6828.js"><link rel="prefetch" href="/assets/startup.html.cde137e6.js"><link rel="prefetch" href="/assets/view.html.0a0e6398.js"><link rel="prefetch" href="/assets/404.html.1287b605.js"><link rel="prefetch" href="/assets/404.1257d42e.js"><link rel="prefetch" href="/assets/Layout.a7d85a69.js">
+    <link rel="stylesheet" href="/assets/style.858bc620.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/index.md" class=""><img class="logo" src="/images/logo.png" alt="Ipare 文档"><span class="site-name can-hide">Ipare 文档</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/usage/intro" class="" aria-label="使用文档"><!--[--><!--]--> 使用文档 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/usage/env" class="" aria-label="运行环境"><!--[--><!--]--> 运行环境 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/plugin/intro" class="" aria-label="更多插件"><!--[--><!--]--> 更多插件 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/ipare" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/usage/intro" class="" aria-label="使用文档"><!--[--><!--]--> 使用文档 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/usage/env" class="" aria-label="运行环境"><!--[--><!--]--> 运行环境 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/plugin/intro" class="" aria-label="更多插件"><!--[--><!--]--> 更多插件 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/ipare" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/plugin/intro.html" class="sidebar-item sidebar-heading" aria-label="插件介绍"><!--[--><!--]--> 插件介绍 <!--[--><!--]--></a><!----></li><li><a href="/plugin/jwt.html" class="sidebar-item sidebar-heading" aria-label="Jwt 身份验证"><!--[--><!--]--> Jwt 身份验证 <!--[--><!--]--></a><!----></li><li><a href="/plugin/swagger.html" class="sidebar-item sidebar-heading" aria-label="Swagger 文档"><!--[--><!--]--> Swagger 文档 <!--[--><!--]--></a><!----></li><li><a href="/plugin/validator.html" class="sidebar-item sidebar-heading" aria-label="参数校验"><!--[--><!--]--> 参数校验 <!--[--><!--]--></a><!----></li><li><a href="/plugin/static.html" class="sidebar-item sidebar-heading" aria-label="静态资源"><!--[--><!--]--> 静态资源 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/koa.html" class="router-link-active router-link-exact-active router-link-active sidebar-item sidebar-heading active" aria-label="Koa"><!--[--><!--]--> Koa <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/plugin/koa.html#安装" class="router-link-active router-link-exact-active sidebar-item" aria-label="安装"><!--[--><!--]--> 安装 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/koa.html#快速开始" class="router-link-active router-link-exact-active sidebar-item" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/koa.html#中间件管道" class="router-link-active router-link-exact-active sidebar-item" aria-label="中间件管道"><!--[--><!--]--> 中间件管道 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/koa.html#使用流" class="router-link-active router-link-exact-active sidebar-item" aria-label="使用流"><!--[--><!--]--> 使用流 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="koa" tabindex="-1"><a class="header-anchor" href="#koa" aria-hidden="true">#</a> Koa</h1><p>安装 <code>@ipare/koa</code> 以支持 Koa 功能</p><ul><li>让 koa 成为 ipare 的中间件</li><li>或 ipare 成为 koa 的中间件</li><li>并打通二者中间件管道</li><li>让 <code>ipare</code> 可以使用大部分 <code>koa</code> 插件</li><li>用 <code>koa</code> 托管 <code>ipare</code></li></ul><h2 id="安装" tabindex="-1"><a class="header-anchor" href="#安装" aria-hidden="true">#</a> 安装</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>npm i @ipare/koa
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="快速开始" tabindex="-1"><a class="header-anchor" href="#快速开始" aria-hidden="true">#</a> 快速开始</h2><h3 id="将-koa-作为-ipare-的中间件" tabindex="-1"><a class="header-anchor" href="#将-koa-作为-ipare-的中间件" aria-hidden="true">#</a> 将 koa 作为 ipare 的中间件</h3><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { TestStartup } from &quot;@ipare/core&quot;;
+import &quot;@ipare/koa&quot;;
+import { Koa } from &quot;@ipare/koa&quot;;
+
+const res = await new TestStartup()
+  .use(async (ctx, next) =&gt; {
+    console.log(&quot;step 1&quot;);
+    await next();
+    console.log(&quot;step 5&quot;);
+  })
+  .useKoa(
+    new Koa().use(async (ctx, next) =&gt; {
+      console.log(&quot;step 2&quot;);
+      await next();
+      console.log(&quot;step 4&quot;);
+    })
+  )
+  .use((ctx) =&gt; {
+    console.log(&quot;step 3&quot;);
+  })
+  .run();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="将-ipare-作为-koa-的中间件" tabindex="-1"><a class="header-anchor" href="#将-ipare-作为-koa-的中间件" aria-hidden="true">#</a> 将 ipare 作为 koa 的中间件</h3><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Koa } from &quot;@ipare/koa&quot;;
+
+const koa = new Koa()
+  .use(async (ctx, next) =&gt; {
+    console.log(&quot;step 1&quot;)
+    await next();
+    console.log(&quot;step 5&quot;)
+  })
+  .use(
+    koaIpare((startup) =&gt; {
+      startup.use(async (ctx, next) =&gt; {
+        console.log(&quot;step 2&quot;)
+        await next();
+        console.log(&quot;step 4&quot;)
+      });
+    })
+  )
+  .use((ctx) =&gt; {
+    console.log(&quot;step 3&quot;)
+  });
+const server = koa.listen(2333);
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="中间件管道" tabindex="-1"><a class="header-anchor" href="#中间件管道" aria-hidden="true">#</a> 中间件管道</h2><p>@ipare/koa 会打通 ipare 和 koa 的中间件管道，就像你在 ipare 中使用 koa 中间件一样</p><p>管道流向：</p><ol><li>在 useKoa 后仍有 ipare 中间件：ipare -&gt; koa -&gt; ipare -&gt; koa -&gt; ipare</li><li>在 useKoa 后没有 ipare 中间件，或 koa 某个中间件是管道终点：ipare -&gt; koa -&gt; ipare</li></ol><p>因此你还可以这样玩：</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { TestStartup } from &quot;@ipare/core&quot;;
+import { Koa } from &quot;@ipare/koa&quot;;
+import cors from &quot;koa-cors&quot;;
+
+const res = await new TestStartup()
+  .useKoa(
+    new Koa()
+      .use(async (ctx, next) =&gt; {
+        ctx.body = &quot;Ipare loves Koa&quot;;
+        await next();
+      })
+      .use(async (ctx) =&gt; {
+        ctx.setHeader(&quot;koa&quot;, &quot;ipare&quot;);
+        await next();
+      })
+  )
+  .use(async (ctx, next) =&gt; {
+    console.log(ctx.res.body); // &quot;Ipare loves Koa&quot;
+    await next();
+  })
+  .useKoa(new Koa().use(cors()))
+  .use(async (ctx) =&gt; {
+    console.log(ctx.res.getHeader(&quot;koa&quot;)); // &quot;ipare&quot;
+  })
+  .run();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="使用流" tabindex="-1"><a class="header-anchor" href="#使用流" aria-hidden="true">#</a> 使用流</h2><p>为了兼容各运行环境，ipare 的 ctx.body 都是已解析好的数据</p><p>因此如果涉及到流，你有两种做法可以让 <code>@ipare/koa</code> 正确解析</p><ol><li>先解析</li></ol><p>在 <code>startup.useKoa</code> 之前的中间件中，先解析流，将解析后的内容放入 <code>ctx.body</code>，在 koa 中间件中即可使用该数据</p><ol><li>配置传入可读流</li></ol><p>useKoa 第二个参数的 streamingBody 传入一个函数，函数参数为 ipare 的 <code>ctx</code>，返回值类型为 <code>ReadableStream</code></p><p>如 http(s) 环境下</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { HttpStartup } from &quot;@ipare/http&quot;;
+
+new HttpStartup().useKoa(new Koa(), {
+  streamingBody: (ctx) =&gt; ctx.httpReq,
+});
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如 阿里云函数 环境下</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { AlifcStartup } from &quot;@ipare/alifc&quot;;
+
+new AlifcStartup(req, resp, context).useKoa(new Koa(), {
+  streamingBody: (ctx) =&gt; ctx.aliReq,
+});
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/ipare/ipare.org/edit/main/docs/plugin/koa.md" rel="noopener noreferrer" target="_blank" aria-label="编辑此页"><!--[--><!--]--> 编辑此页 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: hi@hal.wang">hal-wang</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/plugin/static.html" class="" aria-label="静态资源"><!--[--><!--]--> 静态资源 <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.a704fd29.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Swagger 文档 | Ipare 文档</title><meta name="description" content="面向云的现代渐进式轻量 Node.js 框架">
+    <link rel="modulepreload" href="/assets/app.a704fd29.js"><link rel="modulepreload" href="/assets/swagger.html.f5a705ed.js"><link rel="modulepreload" href="/assets/swagger.html.cb9c2258.js"><link rel="prefetch" href="/assets/index.html.1b288058.js"><link rel="prefetch" href="/assets/intro.html.4c2f2f95.js"><link rel="prefetch" href="/assets/jwt.html.db29e0e1.js"><link rel="prefetch" href="/assets/koa.html.ddde0174.js"><link rel="prefetch" href="/assets/static.html.1e859f7c.js"><link rel="prefetch" href="/assets/validator.html.4ee68295.js"><link rel="prefetch" href="/assets/alifc.html.6570d93e.js"><link rel="prefetch" href="/assets/appoint.html.3f23d8fc.js"><link rel="prefetch" href="/assets/cli.html.67700c52.js"><link rel="prefetch" href="/assets/debug.html.8253f386.js"><link rel="prefetch" href="/assets/env.html.e12b2a73.js"><link rel="prefetch" href="/assets/filter.html.00a41268.js"><link rel="prefetch" href="/assets/http.html.27ca875f.js"><link rel="prefetch" href="/assets/inject.html.ff0c82bd.js"><link rel="prefetch" href="/assets/intro.html.840bb9e4.js"><link rel="prefetch" href="/assets/koa-env.html.32a88ced.js"><link rel="prefetch" href="/assets/lambda.html.af889087.js"><link rel="prefetch" href="/assets/middleware.html.2c11e444.js"><link rel="prefetch" href="/assets/mva.html.715f2f67.js"><link rel="prefetch" href="/assets/pipe.html.47a60c00.js"><link rel="prefetch" href="/assets/quickstart.html.99ff6eae.js"><link rel="prefetch" href="/assets/result.html.8b45bd33.js"><link rel="prefetch" href="/assets/router.html.1c22e02d.js"><link rel="prefetch" href="/assets/startup.html.7d6e636a.js"><link rel="prefetch" href="/assets/view.html.431cdc67.js"><link rel="prefetch" href="/assets/404.html.265028f6.js"><link rel="prefetch" href="/assets/index.html.d6d237f3.js"><link rel="prefetch" href="/assets/intro.html.42de9540.js"><link rel="prefetch" href="/assets/jwt.html.61cce645.js"><link rel="prefetch" href="/assets/koa.html.9f8e6974.js"><link rel="prefetch" href="/assets/static.html.62b1259e.js"><link rel="prefetch" href="/assets/validator.html.2ece5652.js"><link rel="prefetch" href="/assets/alifc.html.0bf62860.js"><link rel="prefetch" href="/assets/appoint.html.e6971070.js"><link rel="prefetch" href="/assets/cli.html.f386a120.js"><link rel="prefetch" href="/assets/debug.html.32f05ffe.js"><link rel="prefetch" href="/assets/env.html.3ccd3c4f.js"><link rel="prefetch" href="/assets/filter.html.67836072.js"><link rel="prefetch" href="/assets/http.html.7850b74f.js"><link rel="prefetch" href="/assets/inject.html.5d786fea.js"><link rel="prefetch" href="/assets/intro.html.79f54a63.js"><link rel="prefetch" href="/assets/koa-env.html.e5e93f00.js"><link rel="prefetch" href="/assets/lambda.html.a77476dd.js"><link rel="prefetch" href="/assets/middleware.html.5b9133dd.js"><link rel="prefetch" href="/assets/mva.html.3df68e40.js"><link rel="prefetch" href="/assets/pipe.html.17ad99c4.js"><link rel="prefetch" href="/assets/quickstart.html.32bfdc5a.js"><link rel="prefetch" href="/assets/result.html.b9c8442a.js"><link rel="prefetch" href="/assets/router.html.70ea6828.js"><link rel="prefetch" href="/assets/startup.html.cde137e6.js"><link rel="prefetch" href="/assets/view.html.0a0e6398.js"><link rel="prefetch" href="/assets/404.html.1287b605.js"><link rel="prefetch" href="/assets/404.1257d42e.js"><link rel="prefetch" href="/assets/Layout.a7d85a69.js">
+    <link rel="stylesheet" href="/assets/style.858bc620.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/index.md" class=""><img class="logo" src="/images/logo.png" alt="Ipare 文档"><span class="site-name can-hide">Ipare 文档</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/usage/intro" class="" aria-label="使用文档"><!--[--><!--]--> 使用文档 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/usage/env" class="" aria-label="运行环境"><!--[--><!--]--> 运行环境 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/plugin/intro" class="" aria-label="更多插件"><!--[--><!--]--> 更多插件 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/ipare" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/usage/intro" class="" aria-label="使用文档"><!--[--><!--]--> 使用文档 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/usage/env" class="" aria-label="运行环境"><!--[--><!--]--> 运行环境 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/plugin/intro" class="" aria-label="更多插件"><!--[--><!--]--> 更多插件 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/ipare" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/plugin/intro.html" class="sidebar-item sidebar-heading" aria-label="插件介绍"><!--[--><!--]--> 插件介绍 <!--[--><!--]--></a><!----></li><li><a href="/plugin/jwt.html" class="sidebar-item sidebar-heading" aria-label="Jwt 身份验证"><!--[--><!--]--> Jwt 身份验证 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/swagger.html" class="router-link-active router-link-exact-active router-link-active sidebar-item sidebar-heading active" aria-label="Swagger 文档"><!--[--><!--]--> Swagger 文档 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/plugin/swagger.html#安装" class="router-link-active router-link-exact-active sidebar-item" aria-label="安装"><!--[--><!--]--> 安装 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/swagger.html#快速开始" class="router-link-active router-link-exact-active sidebar-item" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/swagger.html#配置介绍" class="router-link-active router-link-exact-active sidebar-item" aria-label="配置介绍"><!--[--><!--]--> 配置介绍 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/swagger.html#支持的装饰器" class="router-link-active router-link-exact-active sidebar-item" aria-label="支持的装饰器"><!--[--><!--]--> 支持的装饰器 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/plugin/swagger.html#示例项目" class="router-link-active router-link-exact-active sidebar-item" aria-label="示例项目"><!--[--><!--]--> 示例项目 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/plugin/validator.html" class="sidebar-item sidebar-heading" aria-label="参数校验"><!--[--><!--]--> 参数校验 <!--[--><!--]--></a><!----></li><li><a href="/plugin/static.html" class="sidebar-item sidebar-heading" aria-label="静态资源"><!--[--><!--]--> 静态资源 <!--[--><!--]--></a><!----></li><li><a href="/plugin/koa.html" class="sidebar-item sidebar-heading" aria-label="Koa"><!--[--><!--]--> Koa <!--[--><!--]--></a><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="swagger-文档" tabindex="-1"><a class="header-anchor" href="#swagger-文档" aria-hidden="true">#</a> Swagger 文档</h1><p>安装 <code>@ipare/swagger</code> 以使用 Swagger 文档，用于生成你的 Ipare 文档</p><p>使用装饰器注释文档</p><p>在浏览器中使用 <a href="https://github.com/swagger-api/swagger-ui" target="_blank" rel="noopener noreferrer">swagger-ui<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> 渲染文档</p><h2 id="安装" tabindex="-1"><a class="header-anchor" href="#安装" aria-hidden="true">#</a> 安装</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>npm install @ipare/swagger
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="快速开始" tabindex="-1"><a class="header-anchor" href="#快速开始" aria-hidden="true">#</a> 快速开始</h2><p>在 <code>startup.ts</code> 中</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/swagger&quot;;
+
+startup.useSwagger();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>定义传输模型</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { DtoDescription, DtoFormat, DtoLengthRange } from &quot;@ipare/swagger&quot;;
+
+@DtoDescription(&quot;login info&quot;)
+export class LoginDto {
+  @DtoDescription(&quot;email&quot;)
+  @DtoFormat(&quot;email&quot;)
+  account!: string;
+
+  @DtoDescription(&quot;password&quot;)
+  @DtoLengthRange({
+    min: 8,
+    max: 24,
+  })
+  password!: string;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在 <code>Action</code> 中用 <code>@ipare/pipe</code> 注入请求参数</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Action } from &quot;@ipare/core&quot;;
+import { Body } from &quot;@ipare/pipe&quot;;
+
+@ApiTags(&quot;user&quot;)
+@ApiDescription(&quot;Get user info&quot;)
+export default class extends Action {
+  @Body
+  private readonly loginDto!: LoginDto;
+
+  async invoke() {
+    this.ok(this.loginDto);
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="配置介绍" tabindex="-1"><a class="header-anchor" href="#配置介绍" aria-hidden="true">#</a> 配置介绍</h2><p><code>startup.useSwagger</code> 接收一个 <code>options</code> 参数，包含以下字段：</p><ul><li>path</li><li>builder</li><li>customHtml</li></ul><h3 id="path" tabindex="-1"><a class="header-anchor" href="#path" aria-hidden="true">#</a> path</h3><p>访问 swagger 页面的路径，默认为 <code>/</code></p><h3 id="builder" tabindex="-1"><a class="header-anchor" href="#builder" aria-hidden="true">#</a> builder</h3><p>回调函数，参数为 <code>OpenApiBuilder</code> 对象，返回值为同一个或新的 <code>OpenApiBuilder</code> 对象</p><p>如</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>startup.useSwagger({
+  builder: (builder) =&gt; {
+    builder.addInfo({
+      title: &quot;@ipare/swagger&quot;,
+      version: &quot;0.0.1&quot;,
+    });
+    return builder;
+  }
+})
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>或</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>startup.useSwagger({
+  builder: (builder) =&gt; {
+    return new OpenApiBuilder();
+  },
+});
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>OpenApiBuilder</code> 参考 <a href="https://github.com/metadevpro/openapi3-ts" target="_blank" rel="noopener noreferrer">openapi3-ts<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><h3 id="customhtml" tabindex="-1"><a class="header-anchor" href="#customhtml" aria-hidden="true">#</a> customHtml</h3><p>如果默认页面不能满足需求，可以自定义 swagger html 页面</p><p>该参数传入一个回调函数，函数参数为 json 字符串，返回值为 html 字符串</p><p>json 字符串参数为生成的 swagger 文档</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>startup.useSwagger({
+  customHtml: getHtml,
+});
+
+const getHtml = (jsonStr) =&gt; `&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Swagger UI&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.50.0/swagger-ui.min.css&quot; /&gt;
+    &lt;style&gt;
+      html
+      {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: auth;
+      }
+
+      *,
+      *:before,
+      *:after
+      {
+        box-sizing: inherit;
+      }
+
+      body
+      {
+        margin:0;
+        background: #fafafa;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div id=&quot;swagger-ui&quot;&gt;&lt;/div&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.50.0/swagger-ui-bundle.min.js&quot; charset=&quot;UTF-8&quot;&gt; &lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.50.0/swagger-ui-standalone-preset.min.js&quot; charset=&quot;UTF-8&quot;&gt; &lt;/script&gt;
+    &lt;script&gt;
+    window.onload = function() {
+      const ui = SwaggerUIBundle({
+        spec: ${jsonStr},
+        dom_id: &#39;#swagger-ui&#39;,
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: &quot;StandaloneLayout&quot;,
+        validatorUrl:null
+      });
+      window.ui = ui;
+    };
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;`;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述 <code>getHtml</code> 为 <code>@ipare/swagger</code> 的默认实现</p><h2 id="支持的装饰器" tabindex="-1"><a class="header-anchor" href="#支持的装饰器" aria-hidden="true">#</a> 支持的装饰器</h2><p>文档中大部分内容是根据装饰器生成的</p><h3 id="action-类装饰器" tabindex="-1"><a class="header-anchor" href="#action-类装饰器" aria-hidden="true">#</a> Action 类装饰器</h3><p>装饰 <code>Action</code> 的装饰器，用于描述单个接口</p><ul><li>ApiTags</li><li>ApiSummary</li><li>ApiCallback</li><li>ApiDeprecated</li><li>ApiDescription</li><li>ApiExternalDocs</li><li>ApiOperationId</li><li>ApiResponses</li><li>ApiSecurity</li><li>ApiServers</li></ul><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Action } from &quot;@ipare/core&quot;;
+import { Body } from &quot;@ipare/pipe&quot;;
+
+@ApiTags(&quot;tag&quot;)
+@ApiDescription(&quot;description&quot;)
+export default class extends Action {
+  async invoke() {
+    this.ok();
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="dto-装饰器" tabindex="-1"><a class="header-anchor" href="#dto-装饰器" aria-hidden="true">#</a> Dto 装饰器</h3><p>装饰数据传输模型的装饰器，也可以装饰 <code>@ipare/pipe</code> 的具名字段</p><ul><li>DtoDescription</li><li>DtoAllowEmptyValue</li><li>DtoDeprecated</li><li>DtoIgnore</li><li>DtoRequired</li><li>DtoArrayType</li><li>DtoExample</li><li>DtoSchema</li><li>DtoParameterStyle</li><li>DtoDefault</li><li>DtoNumRange</li><li>DtoLengthRange</li><li>DtoPattern</li><li>DtoPropertiesRange</li><li>DtoReadOnly</li><li>DtoTitle</li><li>DtoWriteOnly</li><li>DtoEnum</li><li>DtoFormat</li><li>DtoXml</li><li>DtoExamples</li><li>DtoType</li></ul><p>在数据传输模型中</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { DtoDescription, DtoFormat, DtoLengthRange } from &quot;@ipare/swagger&quot;;
+
+@DtoDescription(&quot;login info&quot;)
+export class LoginDto {
+  @DtoDescription(&quot;email&quot;)
+  @DtoFormat(&quot;email&quot;)
+  account!: string;
+
+  @DtoDescription(&quot;password&quot;)
+  @DtoLengthRange({
+    min: 8,
+    max: 24,
+  })
+  password!: string;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>或在 Action 中</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Action } from &quot;@ipare/core&quot;;
+import { Body } from &quot;@ipare/pipe&quot;;
+import { DtoRequired, DtoDescription } from &quot;@ipare/swagger&quot;;
+
+export default class extends Action {
+  @Body(&quot;account&quot;)
+  @DtoRequired()
+  @DtoDescription(&quot;email&quot;)
+  private readonly account!: string;
+
+  async invoke() {
+    this.ok({ account });
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="示例项目" tabindex="-1"><a class="header-anchor" href="#示例项目" aria-hidden="true">#</a> 示例项目</h2><ul><li>todo 一个简易的 todo 项目 <ul><li>在线示例: https://todo.hal.wang</li><li>github: https://github.com/hal-wang/todo</li><li>swagger: https://todo-5gcg801923564f08-1253337886.ap-shanghai.app.tcloudbase.com/v2</li></ul></li></ul></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/ipare/ipare.org/edit/main/docs/plugin/swagger.md" rel="noopener noreferrer" target="_blank" aria-label="编辑此页"><!--[--><!--]--> 编辑此页 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: hi@hal.wang">hal-wang</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/plugin/jwt.html" class="" aria-label="Jwt 身份验证"><!--[--><!--]--> Jwt 身份验证 <!--[--><!--]--></a></span><span class="next"><a href="/plugin/validator.html" class="" aria-label="参数校验"><!--[--><!--]--> 参数校验 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.a704fd29.js" defer></script>
+  </body>
+</html>

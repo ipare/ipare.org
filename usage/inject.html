@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>依赖注入 | Ipare 文档</title><meta name="description" content="面向云的现代渐进式轻量 Node.js 框架">
+    <link rel="modulepreload" href="/assets/app.a704fd29.js"><link rel="modulepreload" href="/assets/inject.html.5d786fea.js"><link rel="modulepreload" href="/assets/inject.html.ff0c82bd.js"><link rel="prefetch" href="/assets/index.html.1b288058.js"><link rel="prefetch" href="/assets/intro.html.4c2f2f95.js"><link rel="prefetch" href="/assets/jwt.html.db29e0e1.js"><link rel="prefetch" href="/assets/koa.html.ddde0174.js"><link rel="prefetch" href="/assets/static.html.1e859f7c.js"><link rel="prefetch" href="/assets/swagger.html.cb9c2258.js"><link rel="prefetch" href="/assets/validator.html.4ee68295.js"><link rel="prefetch" href="/assets/alifc.html.6570d93e.js"><link rel="prefetch" href="/assets/appoint.html.3f23d8fc.js"><link rel="prefetch" href="/assets/cli.html.67700c52.js"><link rel="prefetch" href="/assets/debug.html.8253f386.js"><link rel="prefetch" href="/assets/env.html.e12b2a73.js"><link rel="prefetch" href="/assets/filter.html.00a41268.js"><link rel="prefetch" href="/assets/http.html.27ca875f.js"><link rel="prefetch" href="/assets/intro.html.840bb9e4.js"><link rel="prefetch" href="/assets/koa-env.html.32a88ced.js"><link rel="prefetch" href="/assets/lambda.html.af889087.js"><link rel="prefetch" href="/assets/middleware.html.2c11e444.js"><link rel="prefetch" href="/assets/mva.html.715f2f67.js"><link rel="prefetch" href="/assets/pipe.html.47a60c00.js"><link rel="prefetch" href="/assets/quickstart.html.99ff6eae.js"><link rel="prefetch" href="/assets/result.html.8b45bd33.js"><link rel="prefetch" href="/assets/router.html.1c22e02d.js"><link rel="prefetch" href="/assets/startup.html.7d6e636a.js"><link rel="prefetch" href="/assets/view.html.431cdc67.js"><link rel="prefetch" href="/assets/404.html.265028f6.js"><link rel="prefetch" href="/assets/index.html.d6d237f3.js"><link rel="prefetch" href="/assets/intro.html.42de9540.js"><link rel="prefetch" href="/assets/jwt.html.61cce645.js"><link rel="prefetch" href="/assets/koa.html.9f8e6974.js"><link rel="prefetch" href="/assets/static.html.62b1259e.js"><link rel="prefetch" href="/assets/swagger.html.f5a705ed.js"><link rel="prefetch" href="/assets/validator.html.2ece5652.js"><link rel="prefetch" href="/assets/alifc.html.0bf62860.js"><link rel="prefetch" href="/assets/appoint.html.e6971070.js"><link rel="prefetch" href="/assets/cli.html.f386a120.js"><link rel="prefetch" href="/assets/debug.html.32f05ffe.js"><link rel="prefetch" href="/assets/env.html.3ccd3c4f.js"><link rel="prefetch" href="/assets/filter.html.67836072.js"><link rel="prefetch" href="/assets/http.html.7850b74f.js"><link rel="prefetch" href="/assets/intro.html.79f54a63.js"><link rel="prefetch" href="/assets/koa-env.html.e5e93f00.js"><link rel="prefetch" href="/assets/lambda.html.a77476dd.js"><link rel="prefetch" href="/assets/middleware.html.5b9133dd.js"><link rel="prefetch" href="/assets/mva.html.3df68e40.js"><link rel="prefetch" href="/assets/pipe.html.17ad99c4.js"><link rel="prefetch" href="/assets/quickstart.html.32bfdc5a.js"><link rel="prefetch" href="/assets/result.html.b9c8442a.js"><link rel="prefetch" href="/assets/router.html.70ea6828.js"><link rel="prefetch" href="/assets/startup.html.cde137e6.js"><link rel="prefetch" href="/assets/view.html.0a0e6398.js"><link rel="prefetch" href="/assets/404.html.1287b605.js"><link rel="prefetch" href="/assets/404.1257d42e.js"><link rel="prefetch" href="/assets/Layout.a7d85a69.js">
+    <link rel="stylesheet" href="/assets/style.858bc620.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/index.md" class=""><img class="logo" src="/images/logo.png" alt="Ipare 文档"><span class="site-name can-hide">Ipare 文档</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/usage/intro" class="" aria-label="使用文档"><!--[--><!--]--> 使用文档 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/usage/env" class="" aria-label="运行环境"><!--[--><!--]--> 运行环境 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/plugin/intro" class="" aria-label="更多插件"><!--[--><!--]--> 更多插件 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/ipare" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/usage/intro" class="" aria-label="使用文档"><!--[--><!--]--> 使用文档 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/usage/env" class="" aria-label="运行环境"><!--[--><!--]--> 运行环境 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/plugin/intro" class="" aria-label="更多插件"><!--[--><!--]--> 更多插件 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/ipare" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">新手指南 <!----></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/usage/intro.html" class="sidebar-item" aria-label="介绍"><!--[--><!--]--> 介绍 <!--[--><!--]--></a><!----></li><li><a href="/usage/quickstart.html" class="sidebar-item" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a><!----></li><li><a href="/usage/appoint.html" class="sidebar-item" aria-label="习惯约定"><!--[--><!--]--> 习惯约定 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading active">基础 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/usage/startup.html" class="sidebar-item" aria-label="主程序"><!--[--><!--]--> 主程序 <!--[--><!--]--></a><!----></li><li><a href="/usage/middleware.html" class="sidebar-item" aria-label="中间件"><!--[--><!--]--> 中间件 <!--[--><!--]--></a><!----></li><li><a href="/usage/result.html" class="sidebar-item" aria-label="内置结果函数"><!--[--><!--]--> 内置结果函数 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="依赖注入"><!--[--><!--]--> 依赖注入 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/usage/inject.html#装饰器" class="router-link-active router-link-exact-active sidebar-item" aria-label="装饰器"><!--[--><!--]--> 装饰器 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#快速开始" class="router-link-active router-link-exact-active sidebar-item" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#inject-字段初始化时机" class="router-link-active router-link-exact-active sidebar-item" aria-label="@Inject 字段初始化时机"><!--[--><!--]--> @Inject 字段初始化时机 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#作用域" class="router-link-active router-link-exact-active sidebar-item" aria-label="作用域"><!--[--><!--]--> 作用域 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#注册服务" class="router-link-active router-link-exact-active sidebar-item" aria-label="注册服务"><!--[--><!--]--> 注册服务 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#键值注入" class="router-link-active router-link-exact-active sidebar-item" aria-label="键值注入"><!--[--><!--]--> 键值注入 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#服务的嵌套" class="router-link-active router-link-exact-active sidebar-item" aria-label="服务的嵌套"><!--[--><!--]--> 服务的嵌套 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#类装饰器" class="router-link-active router-link-exact-active sidebar-item" aria-label="类装饰器"><!--[--><!--]--> 类装饰器 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#手动注入服务" class="router-link-active router-link-exact-active sidebar-item" aria-label="手动注入服务"><!--[--><!--]--> 手动注入服务 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/usage/inject.html#自定义注入" class="router-link-active router-link-exact-active sidebar-item" aria-label="自定义注入"><!--[--><!--]--> 自定义注入 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/usage/router.html" class="sidebar-item" aria-label="路由"><!--[--><!--]--> 路由 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">进阶 <!----></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/usage/cli.html" class="sidebar-item" aria-label="CLI 脚手架"><!--[--><!--]--> CLI 脚手架 <!--[--><!--]--></a><!----></li><li><a href="/usage/view.html" class="sidebar-item" aria-label="视图渲染"><!--[--><!--]--> 视图渲染 <!--[--><!--]--></a><!----></li><li><a href="/usage/filter.html" class="sidebar-item" aria-label="过滤器"><!--[--><!--]--> 过滤器 <!--[--><!--]--></a><!----></li><li><a href="/usage/mva.html" class="sidebar-item" aria-label="MVA 框架"><!--[--><!--]--> MVA 框架 <!--[--><!--]--></a><!----></li><li><a href="/usage/pipe.html" class="sidebar-item" aria-label="管道"><!--[--><!--]--> 管道 <!--[--><!--]--></a><!----></li><li><a href="/usage/debug.html" class="sidebar-item" aria-label="断点调试"><!--[--><!--]--> 断点调试 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">运行环境 <!----></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/usage/env.html" class="sidebar-item" aria-label="运行环境介绍"><!--[--><!--]--> 运行环境介绍 <!--[--><!--]--></a><!----></li><li><a href="/usage/http.html" class="sidebar-item" aria-label="原生 Http 服务"><!--[--><!--]--> 原生 Http 服务 <!--[--><!--]--></a><!----></li><li><a href="/usage/lambda.html" class="sidebar-item" aria-label="云函数运行环境 Lambda"><!--[--><!--]--> 云函数运行环境 Lambda <!--[--><!--]--></a><!----></li><li><a href="/usage/alifc.html" class="sidebar-item" aria-label="阿里云函数计算"><!--[--><!--]--> 阿里云函数计算 <!--[--><!--]--></a><!----></li><li><a href="/usage/koa-env.html" class="sidebar-item" aria-label="Koa 托管"><!--[--><!--]--> Koa 托管 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="依赖注入" tabindex="-1"><a class="header-anchor" href="#依赖注入" aria-hidden="true">#</a> 依赖注入</h1><p align="center" class="tags"><a href="https://github.com/ipare/inject/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a><a href=""><img src="https://img.shields.io/npm/v/@ipare/inject.svg" alt="npm version"></a><a href=""><img src="https://badgen.net/npm/dt/@ipare/inject" alt="npm downloads"></a><a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/@ipare/inject.svg" alt="node compatibility"></a><a href="#"><img src="https://github.com/ipare/inject/actions/workflows/test.yml/badge.svg?branch=main" alt="Build Status"></a><a href="https://codecov.io/gh/ipare/inject/branch/main"><img src="https://img.shields.io/codecov/c/github/ipare/inject/main.svg" alt="Test Coverage"></a><a href="https://github.com/ipare/inject/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a><a href="https://gitpod.io/#https://github.com/ipare/inject"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"></a><a href="https://paypal.me/ihalwang" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"></a></p><p>添加 <code>@ipare/inject</code> 以实现 <code>Ipare</code> 的 依赖注入</p><h2 id="装饰器" tabindex="-1"><a class="header-anchor" href="#装饰器" aria-hidden="true">#</a> 装饰器</h2><p>你需要开启装饰器功能以使用依赖注入</p><p>装饰器有两种方式：</p><ol><li>在字段声明时使用装饰器 <code>@Inject</code>，<code>@ipare/inject</code> 将在初始化后注入对应服务</li></ol><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>class OtherService(){}
+
+class TestService{
+  @Inject
+  private readonly otherService!: OtherService;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2"><li>在类声明时使用装饰器 <code>@Inject</code>，并在类构造函数中声明服务，<code>@ipare/inject</code> 会在初始化类时注入对应服务</li></ol><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>class OtherService(){}
+
+@Inject
+class TestService{
+  constructor(private readonly otherService: OtherService){}
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="快速开始" tabindex="-1"><a class="header-anchor" href="#快速开始" aria-hidden="true">#</a> 快速开始</h2><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/inject&quot;;
+startup.useInject();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/inject&quot;;
+import { Inject } from &quot;@ipare/inject&quot;;
+import { Middleware } from &quot;@ipare/core&quot;;
+
+class OtherService(){}
+
+class TestService{
+  @Inject
+  private readonly otherService!: OtherService;
+}
+
+class TestMiddleware extends Middleware {
+  @Inject
+  private readonly testService!: TestService;
+
+  async invoke(): Promise&lt;void&gt; {
+    this.ok({
+      service: this.testService.constructor.name,
+    });
+  }
+}
+
+const res = await new TestStartup().useInject().add(TestMiddleware).run();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述代码中的 <code>useInject</code> 会启用依赖注入</p><p>需要注意的是，依赖注入只会在 <code>useInject</code> 之后的中间件中生效，因此你需要把 <code>useInject</code> 放在靠前的位置，根据实际项目决定</p><h2 id="inject-字段初始化时机" tabindex="-1"><a class="header-anchor" href="#inject-字段初始化时机" aria-hidden="true">#</a> <code>@Inject</code> 字段初始化时机</h2><p>被 <code>@Inject</code> 装饰的字段会自动初始化并赋值，初始化的时机有两种：</p><ul><li>中间件：在 <code>invoke</code> 函数被执行前会初始化 <code>@Inject</code> 装饰的字段</li><li>其他类：在类构造函数执行完毕后立即初始化 <code>@Inject</code> 装饰的字段</li></ul><h2 id="作用域" tabindex="-1"><a class="header-anchor" href="#作用域" aria-hidden="true">#</a> 作用域</h2><p>服务的作用域分为三种</p><ol><li>Singleton：单例，nodejs 运行期间只初始化一次，即同时只会存在一个对象</li><li>Scoped：单次访问，每次网络访问会初始化一次，每次网络访问结束后此对象会被丢弃</li><li>Transient：瞬时，每处服务都会被单独初始化</li></ol><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/inject&quot;;
+import { InjectType } &quot;@ipare/inject&quot;;
+
+startup.inject(IService, Service, InjectType.Singleton);
+startup.inject(IService, Service, InjectType.Scoped);
+startup.inject(IService, Service, InjectType.Transient);
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>需要注意的是，在云函数中，不能保证服务是单例的，因为云函数可能在调用完毕即销毁，下次调用启动新实例</p><h2 id="注册服务" tabindex="-1"><a class="header-anchor" href="#注册服务" aria-hidden="true">#</a> 注册服务</h2><p>服务的注册分为隐式注册和显示注册</p><h3 id="隐式注册" tabindex="-1"><a class="header-anchor" href="#隐式注册" aria-hidden="true">#</a> 隐式注册</h3><p>自动注册的服务，可以自动实例化特定类，仅支持 <code>Scoped</code> 作用域的服务，如</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>class TestMiddleware extends Middleware {
+  @Inject
+  private readonly testService!: TestService;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>testService</code> 字段值将自动被实例化，值为 <code>TestService</code> 实例对象</p><p><code>TestService</code> 类构造函数的参数，也可以自动初始化</p><h3 id="显式注册" tabindex="-1"><a class="header-anchor" href="#显式注册" aria-hidden="true">#</a> 显式注册</h3><p>可以指定实例化派生类或服务的作用域，以实现控制反转</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/inject&quot;;
+
+startup.inject(IService, Service);
+// OR
+startup.inject(IService, new Service()); // Singleton only
+// OR
+startup.inject(IService, async (ctx) =&gt; await createService(ctx));
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>需要注意的是， <code>inject</code> 作用于其后的中间件，因此你需要在靠前的位置注册服务</p><h2 id="键值注入" tabindex="-1"><a class="header-anchor" href="#键值注入" aria-hidden="true">#</a> 键值注入</h2><p>你还可以使用特定的 Key 注入服务</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/inject&quot;;
+
+startup.inject(&quot;SERVICE_KEY&quot;, Service);
+// OR
+startup.inject(&quot;SERVICE_KEY&quot;, new Service()); // Singleton only
+// OR
+startup.inject(&quot;SERVICE_KEY&quot;, async (ctx) =&gt; await createService(ctx));
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>class TestMiddleware extends Middleware {
+  @Inject(&quot;SERVICE_KEY&quot;)
+  private readonly testService!: TestService;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>甚至可以注入常量值</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>startup.inject(&quot;KEY1&quot;, true);
+startup.inject(&quot;KEY2&quot;, &quot;str&quot;);
+startup.inject(&quot;KEY3&quot;, 2333);
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>class TestMiddleware extends Middleware {
+  @Inject(&quot;KEY1&quot;)
+  private readonly key1!: boolean; // true
+  @Inject(&quot;KEY2&quot;)
+  private readonly key2!: any; // &quot;str&quot;
+  @Inject(&quot;KEY3&quot;)
+  private readonly key3!: number; // 2333
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="服务的嵌套" tabindex="-1"><a class="header-anchor" href="#服务的嵌套" aria-hidden="true">#</a> 服务的嵌套</h2><p>嵌套的服务也能被正确初始化</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>class TestService1(){}
+
+class TestService2{
+  @Inject
+  private readonly service1!: TestService1;
+}
+
+class TestService3{
+  @Inject
+  private readonly service1!: TestService1;
+
+  @Inject
+  service2!: TestService2;
+}
+
+class TestMiddleware extends Middleware{
+  @Inject
+  private readonly service1!: TestService1;
+
+  @Inject
+  private readonly service2!: TestService2;
+
+  @Inject
+  private readonly service3!: TestService3;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="类装饰器" tabindex="-1"><a class="header-anchor" href="#类装饰器" aria-hidden="true">#</a> 类装饰器</h2><p>你也可以用 @Inject 装饰一个类，这样你就可以在类构造函数中取到服务</p><p>构造函数中也可以使用键值注入参数</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import &quot;@ipare/inject&quot;;
+import { Inject } from &quot;@ipare/inject&quot;;
+import { Middleware } from &quot;@ipare/core&quot;;
+
+class OtherService(){}
+
+@Inject
+class TestService{
+  constructor(
+    readonly otherService: OtherService,
+    @Inject(&quot;KEY1&quot;) private readonly params1: number
+  ){}
+}
+
+@Inject
+class TestMiddleware extends Middleware {
+  constructor(
+    private readonly testService: TestService, // TestService object
+    @Inject(&quot;KEY1&quot;) private readonly params1: number, // 2333
+    @Inject(&quot;KEY2&quot;) private readonly params2: any // true
+  ){
+    super();
+  }
+
+  async invoke(): Promise&lt;void&gt; {
+    this.ok({
+      service: this.testService.constructor.name,
+      params1: this.params1,
+      params2: this.params2
+    });
+  }
+}
+
+const res = await new TestStartup()
+  .useInject()
+  .inject(&quot;KEY1&quot;, 2333)
+  .inject(&quot;KEY2&quot;, true)
+  .add(TestMiddleware)
+  .run();
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>需要注意的是，添加的中间件必须是中间件的构造器</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>setup.add(YourMiddleware)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>因此下面添加中间件的方式，将不能使用类装饰器</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>setup.add(async (ctx, next)=&gt;{})
+setup.add(new YourMiddleware())
+setup.add(()=&gt; new YourMiddleware())
+setup.add(async ()=&gt; await Factory.creatMiddleware())
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="手动注入服务" tabindex="-1"><a class="header-anchor" href="#手动注入服务" aria-hidden="true">#</a> 手动注入服务</h2><p>有些服务可能没有写在其他服务中，也没有写在中间件中，就无法自动注入服务，需要手动注入服务</p><p><code>@ipare/inject</code> 也支持手动注入服务，有两种方式注入</p><ol><li>你可以先创建对象再注入服务</li></ol><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { parseInject } from &#39;@ipare/inject&#39;
+
+const service = new Service();
+await parseInject(ctx, service);
+
+// OR
+const service = await parseInject(ctx, new Service());
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>但是这种方式无法实例化 <code>服务写在构造函数中</code> 的类，仅可注入实例对象字段的服务</p><ol start="2"><li>也可以利用控制反转注入服务</li></ol><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { parseInject } from &#39;@ipare/inject&#39;
+
+const service = await parseInject(ctx, Service);
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这种方式可以同时实例化属性服务或构造器服务</p><h2 id="自定义注入" tabindex="-1"><a class="header-anchor" href="#自定义注入" aria-hidden="true">#</a> 自定义注入</h2><p>可以利用 <code>Inject</code> 和 <code>createInject</code> 创建自定义注入</p><p><code>Inject</code> 传入以下参数将返回装饰器：</p><ul><li>handler: 回调函数，支持异步，返回值将作为装饰的字段值</li><li>type: 可选，生命周期，<code>InjectType</code> 类型，与前面介绍的 <strong>作用域</strong> 的概念相同。这里是用于控制 <code>handler</code> 回调函数的生命周期 <ul><li>Singleton: <code>handler</code> 回调只会执行一次，因此装饰的不同字段值始终相同，回调函数没有 <code>HttpContext</code> 参数</li><li>Scoped: <code>handler</code> 回调每次网络请求只会执行一次，装饰的不同字段值在单次网络访问期间相同，回调函数有参数 <code>HttpContext</code></li><li>Scoped: <code>handler</code> 回调在每个装饰的字段都会执行一次，回调函数有参数 <code>HttpContext</code></li></ul></li></ul><p><code>createInject</code> 无返回值，用于创建更复杂的自定义注入装饰器， 接收以下参数</p><ul><li>handle: 同上</li><li>target: 装饰的类或类的原型，从装饰器参数取得</li><li>propertyKey: 装饰的属性名，从属性装饰器参数取得</li><li>parameterIndex: 装饰的参数索引，从参数装饰器参数取得</li><li>type: <code>InjectType</code> 类型，作用同上面 <code>Inject</code> 的 <code>type</code> 参数</li></ul><h3 id="例-1" tabindex="-1"><a class="header-anchor" href="#例-1" aria-hidden="true">#</a> 例 1</h3><p>实现获取请求 <code>Host</code> 和获取统一用户 ID</p><p>定义</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Inject } from &quot;@ipare/inject&quot;;
+
+const Host = Inject((ctx) =&gt; ctx.req.getHeader(&quot;Host&quot;));
+const UserID = Inject((ctx) =&gt; ctx.req.query[&quot;uid&quot;]);
+
+// OR
+function UserID(target:any, propertyKey: string|symbol){
+  return createInject((ctx) =&gt; ctx.req.query[&quot;uid&quot;], target, propertyKey);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>中间件</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Middleware } from &quot;@ipare/core&quot;;
+
+class TestMiddleware extends Middleware {
+  @Host
+  readonly host!: string;
+  @UserID
+  readonly userId!: string;
+
+  async invoke(): Promise&lt;void&gt; {
+    this.ok({
+      host: this.host,
+      userId: this.userId,
+    });
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>OR</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>@Inject
+class TestMiddleware extends Middleware {
+  constructor(@Host readonly host: string, @UserID readonly userId: string){
+    super();
+  }
+
+  async invoke(): Promise&lt;void&gt; {
+    this.ok({
+      host: this.host,
+      userId: this.userId,
+    });
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="例-2" tabindex="-1"><a class="header-anchor" href="#例-2" aria-hidden="true">#</a> 例 2</h3><p>嵌套服务</p><p>定义</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Inject,parseInject } from &quot;@ipare/inject&quot;;
+
+class TestService1{}
+class TestService2{
+  @Inject
+  service1: TestService1;
+}
+class TestService3{
+  @Inject
+  service1: TestService1;
+  @Inject
+  service2: TestService2;
+}
+
+const Service3 = Inject((ctx) =&gt; new TestService3());
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>中间件</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>import { Middleware } from &quot;@ipare/core&quot;;
+
+class TestMiddleware extends Middleware {
+  @Service3
+  readonly service1!: Service3;
+  @Service3
+  readonly service2!: any;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>OR</p><div class="language-TS ext-TS line-numbers-mode"><pre class="language-TS"><code>@Inject
+class TestMiddleware extends Middleware {
+  constructor(
+    @Service3 readonly service1: Service3,
+    @Service3 readonly service2: any
+  ){
+    super();
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/ipare/ipare.org/edit/main/docs/usage/inject.md" rel="noopener noreferrer" target="_blank" aria-label="编辑此页"><!--[--><!--]--> 编辑此页 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: hi@hal.wang">hal-wang</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/usage/result.html" class="" aria-label="内置结果函数"><!--[--><!--]--> 内置结果函数 <!--[--><!--]--></a></span><span class="next"><a href="/usage/router.html" class="" aria-label="路由"><!--[--><!--]--> 路由 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.a704fd29.js" defer></script>
+  </body>
+</html>

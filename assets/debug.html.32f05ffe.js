@@ -1,0 +1,23 @@
+import{_ as e,o as n,c as a,d as i}from"./app.a704fd29.js";const s={},d=i(`<h1 id="\u65AD\u70B9\u8C03\u8BD5" tabindex="-1"><a class="header-anchor" href="#\u65AD\u70B9\u8C03\u8BD5" aria-hidden="true">#</a> \u65AD\u70B9\u8C03\u8BD5</h1><p>\u6B64\u6559\u7A0B\u4F7F\u7528 vscode \u65AD\u70B9\u8C03\u8BD5 Ipare \u9879\u76EE</p><p>\u975E <code>@ipare/http</code> \u9879\u76EE\u8C03\u8BD5\uFF0C\u4F1A\u81EA\u52A8\u4F7F\u7528 <code>@ipare/http</code> \u6A21\u62DF\u539F\u751F Http \u73AF\u5883</p><h2 id="cli-\u521B\u5EFA\u7684\u9879\u76EE" tabindex="-1"><a class="header-anchor" href="#cli-\u521B\u5EFA\u7684\u9879\u76EE" aria-hidden="true">#</a> CLI \u521B\u5EFA\u7684\u9879\u76EE</h2><p>\u7531 <code>@ipare/cli</code> \u521B\u5EFA\u7684\u9879\u76EE\u5DF2\u7ECF\u914D\u7F6E\u597D\u8C03\u8BD5\u73AF\u5883\uFF0C\u53EF\u4EE5\u7528 vscode \u6253\u5F00\u9879\u76EE\u5E76\u6309\u4E0B F5 \u5F00\u59CB\u8C03\u8BD5</p><p>\u6216\u8FD0\u884C\u8FD9\u4E2A\u547D\u4EE4</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> start
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="\u4E0D\u662F-cli-\u521B\u5EFA\u7684\u9879\u76EE" tabindex="-1"><a class="header-anchor" href="#\u4E0D\u662F-cli-\u521B\u5EFA\u7684\u9879\u76EE" aria-hidden="true">#</a> \u4E0D\u662F CLI \u521B\u5EFA\u7684\u9879\u76EE</h2><p>\u5982\u679C\u4E0D\u662F <code>@ipare/cli</code> \u521B\u5EFA\u7684\u9879\u76EE\uFF0C\u5E76\u4E14\u6CA1\u6709\u8C03\u8BD5\u914D\u7F6E\uFF0C\u53EF\u4EE5\u53C2\u8003\u4EE5\u4E0B\u6B65\u9AA4\u914D\u7F6E</p><h3 id="\u5B89\u88C5" tabindex="-1"><a class="header-anchor" href="#\u5B89\u88C5" aria-hidden="true">#</a> \u5B89\u88C5</h3><p>\u786E\u4FDD\u5DF2\u5728\u9879\u76EE\u5185\u6216\u5168\u5C40\u5B89\u88C5 <code>@ipare/cli</code></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># \u9879\u76EE\u4E2D\u5B89\u88C5</span>
+<span class="token function">npm</span> <span class="token function">install</span> @ipare/cli -D
+
+<span class="token comment"># \u6216 \u5168\u5C40\u5B89\u88C5</span>
+<span class="token function">npm</span> <span class="token function">install</span> @ipare/cli -g
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="\u521B\u5EFA\u811A\u672C" tabindex="-1"><a class="header-anchor" href="#\u521B\u5EFA\u811A\u672C" aria-hidden="true">#</a> \u521B\u5EFA\u811A\u672C</h3><p>\u4FEE\u6539 package.json \u6587\u4EF6\uFF0C\u6DFB\u52A0</p><div class="language-JSON ext-JSON line-numbers-mode"><pre class="language-JSON"><code>  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;ipare start --mode development --watch&quot;,
+    &quot;start&quot;: &quot;npm run dev&quot;,
+    &quot;build&quot;: &quot;ipare build&quot;
+  },
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="\u589E\u52A0\u8C03\u8BD5\u914D\u7F6E" tabindex="-1"><a class="header-anchor" href="#\u589E\u52A0\u8C03\u8BD5\u914D\u7F6E" aria-hidden="true">#</a> \u589E\u52A0\u8C03\u8BD5\u914D\u7F6E</h3><p>\u5728\u9879\u76EE\u4E0B\u521B\u5EFA <code>.vscode/launch.json</code> \u6587\u4EF6</p><div class="language-JSON ext-JSON line-numbers-mode"><pre class="language-JSON"><code>{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+    {
+      &quot;command&quot;: &quot;npm start&quot;,
+      &quot;name&quot;: &quot;Ipare Http Debugger&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;type&quot;: &quot;node-terminal&quot;
+    }
+  ]
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="\u5F00\u59CB\u8C03\u8BD5" tabindex="-1"><a class="header-anchor" href="#\u5F00\u59CB\u8C03\u8BD5" aria-hidden="true">#</a> \u5F00\u59CB\u8C03\u8BD5</h3><p>\u6309\u4E0B F5 \u5373\u53EF\u5F00\u59CB\u65AD\u70B9\u8C03\u8BD5</p>`,20),c=[d];function r(t,l){return n(),a("div",null,c)}var u=e(s,[["render",r],["__file","debug.html.vue"]]);export{u as default};
